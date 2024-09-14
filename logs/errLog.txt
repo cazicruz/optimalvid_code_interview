@@ -1,0 +1,10 @@
+20240909	20:02:29	080396de-aa5e-45f3-af78-7247b9d6b7a2	SyntaxError: Unexpected string in JSON at position 194
+20240909	20:12:58	07add806-99e6-444a-8c12-8cf421578f4a	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-gt83swu-shard-00-01.dyyoydd.mongodb.net
+20240914	12:42:52	0aee4f80-eb48-4874-93b8-10c59e8423e1	ValidationError: User validation failed: DoB: Cast to date failed for value "Unknown Type: date" (type string) at path "DoB"
+20240914	12:43:25	6aa5f5e9-19a2-4c88-940c-6afd2d03b2cf	ValidationError: User validation failed: DoB: Cast to date failed for value "16th nov 1990" (type string) at path "DoB"
+20240914	12:43:52	8e9de7bf-75dd-4f76-ab90-22e46a979e31	ValidationError: User validation failed: DoB: Cast to date failed for value "19/7/19" (type string) at path "DoB"
+20240914	12:44:18	7548ea09-0799-4eec-81eb-c81df5139074	SyntaxError: Unexpected token / in JSON at position 160
+20240914	12:54:24	983cea1b-d9bb-4ce4-afb9-24fb8a0e8457	Error: Error creating project: Project with this title already exists for user
+20240914	13:09:15	bb8725b0-f369-4674-bc77-e77ca93aeef8	ValidationError: Task validation failed: assignedBy: Cast to ObjectId failed for value "string" (type string) at path "assignedBy" because of "BSONError", assignedTo.0: Cast to [ObjectId] failed for value "[ 'string' ]" (type string) at path "assignedTo.0" because of "CastError"
+20240914	13:10:02	b627040d-afeb-4560-ae56-92e30f6d0165	SyntaxError: Unexpected token } in JSON at position 89
+20240914	13:19:36	13bd1990-bbb6-4933-8c00-5b33f65f0fc0	Error: Task not found
