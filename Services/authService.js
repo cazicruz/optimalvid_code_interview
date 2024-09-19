@@ -23,13 +23,14 @@ const login = async (email, password) => {
     // find user with email
     const user = await User.findOne({ email: email }).exec();
     // return false to show an error if user not found
-    if (!user){return null}
-    // check is the password matches that in db
-    const match = await bcrypt.compare(password, user.password);
+    if (user){
+        // check is the password matches that in db
+        const match = await bcrypt.compare(password, user.password);
+        if (match){return user}
+        // return user if password matches
+    }
+    return null;
     // return false to show an error if password does not match
-    if (user.password !== password){return null}
-    // return user if password matches
-    return user;
 }
 
 

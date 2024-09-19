@@ -120,3 +120,4 @@
 20240914	15:04:11	98a38527-d502-4058-a7d2-2a3adcc323fa	POST	http://localhost:3001	/api/auth/login
 20240914	15:04:46	07cf977c-9b6f-41fa-b077-177a083d8b9c	POST	http://localhost:3001	/api/auth/login
 20240914	15:05:08	0c4050e7-2091-4cc0-9ae1-68a99c4e5810	POST	http://localhost:3001	/api/projects/user/add
+20240914	15:30:00	3ed393ad-fc2d-426e-862d-8fedd9b0657b	GET	undefined	/
