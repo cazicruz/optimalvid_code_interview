@@ -44,6 +44,7 @@ const createProjects =async(req,res)=>{
     const projectObj={
         title:req.body.title,
         description:req.body.description,
+        users:userId,
         createdBy:userId
     }
     const { newProject, user } = await projectService.createProjects(projectObj,userId);
@@ -58,8 +59,8 @@ const createProjects =async(req,res)=>{
 }
 
 const addUserToProject= async (req,res)=>{
-    const {userId, projectId} = req.body
-    const {user,project} = await addUserToProject(userId,projectId);
+    const {email, projectId} = req.body
+    const {user,project} = await projectService.addUserToProject(email,projectId);
     if(user,project){
         return res.status(200).json({msg:'user added to project',
                                         user,
@@ -68,6 +69,14 @@ const addUserToProject= async (req,res)=>{
     }
     return res.status(400).json({msg:'error updating user to project'});
 }
+const getAllUsersInProject= async (req,res)=>{
+    const {id} = req.params;
+    if(id){
+        const users = await projectService.getAllUsersInProject(id);
+        if(users){return res.status(200).json({msg:'users in project gotten successfully'})}
+    }
+    return res.status(400).json({msg:'error getting users'})
+}
 
 
 
@@ -75,6 +84,7 @@ const addUserToProject= async (req,res)=>{
 const projectController ={
     getAllProjects,
     getAllUsersProjects,
+    getAllUsersInProject,
     createProjects,
     getProjectById,
     addUserToProject,

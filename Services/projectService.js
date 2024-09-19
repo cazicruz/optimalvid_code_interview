@@ -60,6 +60,11 @@ const getAllTaskInProject = async (project_id)=>{
     return project.tasks;
 }
 
+const getAllUsersInProject = async (project_id)=>{
+    const project= await Project.findById(project_id).populate('users').exec();
+    return project.users;
+}
+
 const addTaskIdToProject = async (project_id, task_id) => {
     const project = await Project.findById(project_id).exec();
     if (!project) {
@@ -70,8 +75,8 @@ const addTaskIdToProject = async (project_id, task_id) => {
     return project;
 }
 
-const addUserToProject = async (userId,projectId)=>{
-    const user = await Users.findById(userId).exec()
+const addUserToProject = async (email,projectId)=>{
+    const user = await Users.findOne({email:email}).exec()
     const project =await Project.findById(projectId).exec()
     if (!user || !project) {
         throw new Error('User or project not found');
@@ -112,6 +117,7 @@ const projectServices = {
     getProjectById,
     getAllProjects,
     getAllTaskInProject,
+    getAllUsersInProject,
     addTaskIdToProject,
     deleteTaskInProject,
     addUserToProject,

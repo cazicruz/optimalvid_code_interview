@@ -11,6 +11,8 @@ router.get('/user',verifyJWT, asyncHandler(projectController.getAllUsersProjects
 router.get('/:id',verifyJWT, asyncHandler(projectController.getProjectById));
 router.post('/',verifyJWT, asyncHandler(projectController.createProjects));
 router.put('/user/add',verifyJWT, asyncHandler(projectController.addUserToProject));
+//project and user routes
+router.get('/:id/users',verifyJWT,asyncHandler(projectController.getAllUsersInProject));
 //project and task routes
 router.get('/:id/task',verifyJWT, asyncHandler(taskController.getAllTaskInProject));
 router.post('/:id/task',verifyJWT, asyncHandler(taskController.createTaskWithProjectId));
@@ -98,6 +100,20 @@ module.exports = router;
  *         description: User's projects retrieved successfully
  *       404:
  *         description: User ID missing in route parameter
+ *
+ * /projects/{id}/user:
+ *   get:
+ *     summary: Get all user related to the project
+ *     description: Retrieve all users associated with the project
+ *     tags:
+ *       - Projects
+ *     security:
+ *       - ApiKeyAuth: []
+ *     responses:
+ *       200:
+ *         description: User's in project retrieved successfully
+ *       404:
+ *         description: project ID missing in route parameter
  *
  * /projects/{id}:
  *   get:
