@@ -65,7 +65,7 @@ app.use(cors({
     origin: true,  // Allow all origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Specify allowed HTTP methods
     credentials: true,  // Allow credentials (cookies, authorization headers, etc.)
-    allowedHeaders: ['Content-Type', 'Authorization'],  // Specify allowed headers
+    allowedHeaders: ['Content-Type', 'Authorization','x-access-token '],  // Specify allowed headers
   }));
 // built-in middleware to handle urlencoded form data
 app.use(express.urlencoded({ extended: false }));
